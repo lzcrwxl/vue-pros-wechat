@@ -1,8 +1,13 @@
 'use strict'
+const webpack = require('webpack')
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+
+const px2rem = require('postcss-px2rem')
+const postcss = require('postcss')
+
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -74,6 +79,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.(css|less|scss)(\?.*)?$/,
+        loader: 'style-loader!css-loader!sass-loader!less-loader!postcss-loader'
       }
     ]
   },
@@ -88,5 +97,14 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  //此插件是自动把px换算成rem
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+        // webpack 2.0之后， 此配置不能直接写在自定义配置项中， 必须写在此处
+        vue: {
+            postcss: [require('postcss-px2rem')({ remUnit: 75, propWhiteList: [] })]
+        },
+    })
+  ]
 }
