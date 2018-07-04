@@ -9,6 +9,11 @@ const px2rem = require('postcss-px2rem')
 const postcss = require('postcss')
 
 
+const vuxLoader = require('vux-loader')
+
+
+
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -24,7 +29,7 @@ const createLintingRule = () => ({
   }
 })
 
-module.exports = {
+const webpackConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
@@ -108,3 +113,11 @@ module.exports = {
     })
   ]
 }
+
+
+module.exports = vuxLoader.merge(webpackConfig, {
+  options: {},
+  plugins: [{
+    name: 'vux-ui'
+  }]
+})
