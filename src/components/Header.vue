@@ -17,6 +17,7 @@ export default {
 </script>
 <style lang='scss'>
 header {
+  background: #fff;
   position: relative;
   color: #000;
   font-size: 32px;
