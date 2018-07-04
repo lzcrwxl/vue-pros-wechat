@@ -8,7 +8,6 @@ const vueLoaderConfig = require('./vue-loader.conf')
 const px2rem = require('postcss-px2rem')
 const postcss = require('postcss')
 
-
 const vuxLoader = require('vux-loader')
 
 
@@ -118,6 +117,6 @@ const webpackConfig = {
 module.exports = vuxLoader.merge(webpackConfig, {
   options: {},
   plugins: [{
-    name: 'vux-ui'
+    name: 'vux-ui',
   }]
 })

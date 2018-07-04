@@ -1,43 +1,46 @@
 <!-- 注册&登录页 -->
 <template>
   <div id="">
-     <Header></Header>
-     <div class="form-pannel">
-       <form action="">
-         <ul class="form-list">
-           <li>
-             <label for=""></label>
-             <input type="text" placeholder="请输入手机号"/>
-           </li>
-         </ul>
-       </form>
-     </div>
+    <Header></Header>
+    <div class="form-pannel">
+      <form action="">
+        <ul class="form-list">
+          <li>
+            <label for=""></label>
+            <input type="text" placeholder="请输入手机号" />
+          </li>
+        </ul>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
+import Header from '@/components/Header.vue'
+import { Group, Cell } from 'vux'
 
 export default {
   data () {
-    return {
-
-    }
+    return {}
   },
-  components:{
-    Header
+  mounted () {
+    // this.$vux.toast.text('hello', 'top')
+  },
+  components: {
+    Header,
+    Group,
+    Cell
   }
 }
-
 </script>
 <style lang='scss' scoped>
-  .form-list{
-    margin: 20px 0 90px;
-    padding: 0 20px;
-    li{
-      height: 110px;
-      display: flex;
-      align-items: center;
-    }
+.form-list {
+  margin: 20px 0 90px;
+  padding: 0 20px;
+  li {
+    height: 110px;
+    display: flex;
+    align-items: center;
   }
+}
 </style>

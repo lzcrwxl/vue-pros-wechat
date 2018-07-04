@@ -5,7 +5,6 @@ Vue.use(Router)
 
 const login = r => require.ensure([], () => r(require('@/views/login/login')), 'login')
 
-
 export default new Router({
   routes: [
     {
