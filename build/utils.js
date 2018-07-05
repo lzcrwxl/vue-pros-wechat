@@ -12,6 +12,12 @@ exports.assetsPath = function (_path) {
   return path.posix.join(assetsSubDirectory, _path)
 }
 
+// 全局文件引入 当然只想编译一个文件的话可以省去这个函数
+function resolveResource(name) {
+  return path.resolve(__dirname, '../src/assets/styles/' + name);
+}
+
+
 exports.cssLoaders = function (options) {
   options = options || {}
 
@@ -60,7 +66,14 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    scss: generateLoaders('sass').concat(
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources:[resolveResource('variable.scss')]
+        }
+      }
+    ),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }

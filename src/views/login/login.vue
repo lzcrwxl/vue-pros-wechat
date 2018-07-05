@@ -69,7 +69,7 @@ export default {
     .captcha {
     }
     .smscode {
-      background: #31c27c;
+      background:$btn-gr;
       color: #fff;
     }
   }
