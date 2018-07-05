@@ -29,19 +29,19 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import Header from '@/components/Header.vue'
 
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  mounted() {
+  mounted () {
     // this.$vux.toast.text('hello', 'top')
   },
   components: {
     Header
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 .form-list {
