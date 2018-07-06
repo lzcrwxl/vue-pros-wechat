@@ -22,8 +22,11 @@
         </ul>
       </form>
       <div class="btn-block-wrapper">
-        <button>开始</button>
+        <a class="btn-block" @click.prevent="register">开始</a>
       </div>
+      <p class="tips tc">点击开始，即表示已阅读并同意
+        <em>《用户服务协议》</em>
+      </p>
     </div>
   </div>
 </template>
@@ -35,8 +38,12 @@ export default {
   data() {
     return {};
   },
-  mounted() {
-    // this.$vux.toast.text('hello', 'top')
+  mounted() {},
+  methods: {
+    register() {
+      // 显示文字
+      this.$vux.toast.text("请输入手机号码")
+    }
   },
   components: {
     Header
@@ -67,11 +74,29 @@ export default {
       padding-right: 130px;
     }
     .captcha {
+      opacity: 0.9;
     }
     .smscode {
-      background:$btn-gr;
+      background: $btn-gr;
       color: #fff;
     }
+  }
+}
+.btn-block-wrapper {
+  margin-top: 98px;
+  text-align: center;
+  margin-bottom: 29px;
+  .btn-block {
+    @include btn-base(690px, 84px, 32px);
+    background-color: $btn-gr;
+    color: #fff;
+  }
+}
+.tips {
+  font-size: 24px;
+  color: #969699;
+  em {
+    color: $btn-gr;
   }
 }
 </style>

@@ -1,12 +1,17 @@
 <template>
   <div id="app">
     <router-view/>
+    <footer-nav></footer-nav>
   </div>
 </template>
 
 <script>
+import FooterNav from '@/components/Footer';
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    FooterNav
+  }
 }
 </script>
 

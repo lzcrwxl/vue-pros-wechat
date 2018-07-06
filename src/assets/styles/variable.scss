@@ -1,1 +1,13 @@
 $btn-gr:#31c27c;
+
+@mixin btn-base($w:200px,$h:72px,$fz:28px) {
+  display: inline-block;
+  width: $w;
+  height: $h;
+  line-height: $h;
+  font-size: $fz;
+  text-align: center;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}

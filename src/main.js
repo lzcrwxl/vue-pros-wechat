@@ -5,7 +5,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-
+import  { ToastPlugin } from 'vux'
+Vue.use(ToastPlugin)
 
 
 // 移除移动端页面点击延迟
