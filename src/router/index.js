@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import login from '@/views/login/login'
+import my from '@/views/my/my'
 Vue.use(Router)
 
 const Login = r => require.ensure([], () => r(require('@/views/login/login')), 'Login')

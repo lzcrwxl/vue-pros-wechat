@@ -32,11 +32,11 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import Header from '@/components/Header.vue'
 
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
   mounted() {},
   methods: {
@@ -48,7 +48,7 @@ export default {
   components: {
     Header
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 .form-list {
