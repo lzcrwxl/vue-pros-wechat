@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import login from '@/views/login/login'
-import my from '@/views/my/my'
+// import my from '@/views/my/my'
 Vue.use(Router)
 
 const Login = r => require.ensure([], () => r(require('@/views/login/login')), 'Login')
@@ -9,6 +9,7 @@ const Course = r => require.ensure([], () => r(require('@/views/course/course'))
 const Job = r => require.ensure([], () => r(require('@/views/job/job')), 'Job')
 const School = r => require.ensure([], () => r(require('@/views/school/school')), 'School')
 const Mine = r => require.ensure([], () => r(require('@/views/mine/mine')), 'Mine')
+const MineInfoDetail = r => require.ensure([], () => r(require('@/views/mine/detail')), 'MineInfoDetail')
 
 export default new Router({
   routes: [
@@ -45,5 +46,10 @@ export default new Router({
       name: 'Mine',
       component: Mine
     },
+    {
+      path: '/mineinfodetail',
+      name: 'MineInfoDetail',
+      component: MineInfoDetail
+    }
   ]
 })

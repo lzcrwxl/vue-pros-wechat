@@ -4,12 +4,13 @@
     <a href="#" class="back">
       <img src="@/assets/imgs/icon-back.png" alt="">
     </a>
-    手机验证
+    {{title}}
   </header>
 </template>
 
 <script>
 export default {
+  props: ['title'],
   data () {
     return {}
   }

@@ -1,7 +1,7 @@
 <!-- 注册&登录页 -->
 <template>
   <div id="">
-    <Header></Header>
+    <Header title="手机验证"></Header>
     <div class="form-pannel">
       <form action="">
         <ul class="form-list">
@@ -38,11 +38,11 @@ export default {
   data () {
     return {}
   },
-  mounted() {},
+  mounted () {},
   methods: {
-    register() {
+    register () {
       // 显示文字
-      this.$vux.toast.text("请输入手机号码")
+      this.$vux.toast.text('请输入手机号码')
     }
   },
   components: {
