@@ -31,15 +31,7 @@ export default {
   data () {
     return {
     }
-  },
-
-  components: {},
-
-  computed: {},
-
-  mounted: {},
-
-  methods: {}
+  }
 }
 </script>
 <style lang='scss' scoped>
@@ -55,7 +47,7 @@ export default {
       height: 98px;
       position: relative;
       text-align: center;
-      line-height: 3;
+      line-height: 2.6;
       color: #808080;
       img {
         max-width: 59px;
