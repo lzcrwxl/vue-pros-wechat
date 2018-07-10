@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
     }
   },
@@ -40,7 +40,7 @@ export default {
   mounted: {},
 
   methods: {}
-};
+}
 </script>
 <style lang='scss' scoped>
 .foot-tabs {

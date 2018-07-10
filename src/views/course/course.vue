@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import { Tab, TabItem } from "vux";
+import { Tab, TabItem } from 'vux'
 
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
 
   components: {
@@ -26,7 +26,7 @@ export default {
   mounted: {},
 
   methods: {}
-};
+}
 </script>
 <style lang='scss' scoped>
 </style>
