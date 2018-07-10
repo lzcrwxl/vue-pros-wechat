@@ -10,7 +10,11 @@ const postcss = require('postcss')
 
 const vuxLoader = require('vux-loader')
 
-
+// 配置主题色
+let lessTheme={
+  name:'less-theme',
+  path:path.resolve(__dirname,'../src/assets/theme.less')
+}
 
 
 function resolve (dir) {
@@ -116,7 +120,7 @@ const webpackConfig = {
 
 module.exports = vuxLoader.merge(webpackConfig, {
   options: {},
-  plugins: ['vux-ui', 'progress-bar', 'duplicate-style',{
+  plugins: ['vux-ui', lessTheme,'progress-bar', 'duplicate-style',{
     name: 'after-less-parser',
     fn: function (source) {
       if (this.resourcePath.replace(/\\/g, '/').indexOf('/vux/src/components') > -1) {
