@@ -13,7 +13,7 @@ export default {
     return {}
   },
   components: {
-      Header
+    Header
   },
   methods: {}
 }
