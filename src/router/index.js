@@ -7,6 +7,7 @@ const Course = r => require.ensure([], () => r(require('@/views/course/course'))
 const Job = r => require.ensure([], () => r(require('@/views/job/job')), 'Job')
 const School = r => require.ensure([], () => r(require('@/views/school/school')), 'School')
 const Mine = r => require.ensure([], () => r(require('@/views/mine/mine')), 'Mine')
+const MineInfoDetail = r => require.ensure([], () => r(require('@/views/mine/detail')), 'MineInfoDetail')
 
 export default new Router({
   linkActiveClass: 'active',
@@ -56,5 +57,10 @@ export default new Router({
       },
       component: Mine
     },
+    {
+      path: '/mineinfodetail',
+      name: 'MineInfoDetail',
+      component: MineInfoDetail
+    }
   ]
 })
