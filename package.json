@@ -17,6 +17,7 @@
   "dependencies": {
     "fastclick": "^1.0.6",
     "less-loader": "^4.1.0",
+    "lib-flexible": "^0.3.2",
     "postcss": "^6.0.23",
     "postcss-px2rem": "^0.3.0",
     "vue": "^2.5.2",

@@ -47,6 +47,7 @@ export default {
   position: fixed;
   bottom: 0;
   width: 100%;
+  background:#fff;
   ul {
     display: flex;
     justify-content: space-between;
