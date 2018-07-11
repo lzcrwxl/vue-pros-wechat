@@ -11,6 +11,7 @@ const MineInfoDetail = r => require.ensure([], () => r(require('@/views/mine/det
 const MinePeixun = r => require.ensure([], () => r(require('@/views/mine/peixun')), 'MinePeixun')
 const MineZhengshu = r => require.ensure([], () => r(require('@/views/mine/zhengshu')), 'MineZhengshu')
 const message = r => require.ensure([], () => r(require('@/views/mine/message')), 'message')
+const hongbao = r => require.ensure([], () => r(require('@/views/mine/hongbao')), 'hongbao')
 
 export default new Router({
   linkActiveClass: 'active',
@@ -79,6 +80,11 @@ export default new Router({
     path: '/message',
     name: 'message',
     component: message
+  },
+  {
+    path: '/hongbao',
+    name: 'hongbao',
+    component: hongbao
   }
   ]
 })
