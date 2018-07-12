@@ -122,29 +122,29 @@
 </template>
 
 <script>
-import { Tab, TabItem, Sticky, Swiper, SwiperItem } from "vux";
+import { Tab, TabItem, Sticky, Swiper, SwiperItem } from 'vux'
 // import 'swiper/dist/css/swiper.css'
 // import { swiper, swiperSlide } from 'vue-awesome-swiper'
-const list = () => ["已购课程", "推荐课程"];
+const list = () => ['已购课程', '推荐课程']
 
 export default {
-  data() {
+  data () {
     return {
       showSpace: false,
       disabled:
-        typeof navigator !== "undefined" &&
+        typeof navigator !== 'undefined' &&
         /iphone/i.test(navigator.userAgent) &&
         /ucbrowser/i.test(navigator.userAgent),
       index01: 0,
       list2: list(),
-      demo2: "美食",
-      list3: ["收到的消息", "发出的消息"],
-      demo3: "收到的消息",
-      list4: ["正在放映", "即将上映"],
-      demo4: "即将上映",
-      demoDisabled: "A",
+      demo2: '美食',
+      list3: ['收到的消息', '发出的消息'],
+      demo3: '收到的消息',
+      list4: ['正在放映', '即将上映'],
+      demo4: '即将上映',
+      demoDisabled: 'A',
       index: 0
-    };
+    }
   },
   components: {
     Tab,
@@ -154,21 +154,21 @@ export default {
     SwiperItem
   },
   methods: {
-    switchTabItem(index) {
-      console.log("on-before-index-change", index);
+    switchTabItem (index) {
+      console.log('on-before-index-change', index)
       this.$vux.loading.show({
-        text: "loading"
-      });
+        text: 'loading'
+      })
       setTimeout(() => {
-        this.$vux.loading.hide();
-        this.index01 = index;
-      }, 1000);
+        this.$vux.loading.hide()
+        this.index01 = index
+      }, 1000)
     },
-    onItemClick(index) {
-      console.log("on item click:", index);
+    onItemClick (index) {
+      console.log('on item click:', index)
     }
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 .banner {
