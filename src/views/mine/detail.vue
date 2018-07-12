@@ -1,7 +1,7 @@
 <!-- 个人详情 -->
 <template>
     <div>
-        <x-header>个人详情</x-header>
+        <x-header :left-options="{backText: ''}">个人详情</x-header>
         <div class="member-content">
             <group>
                 <cell title="头像："></cell>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import {Group, CellBox, Cell} from 'vux'
+import {Group, CellBox, Cell, XHeader} from 'vux'
 import Header from '@/components/Header.vue'
 
 export default {
@@ -32,7 +32,8 @@ export default {
     Header,
     Group,
     CellBox,
-    Cell
+    Cell,
+    XHeader
   },
   methods: {}
 }

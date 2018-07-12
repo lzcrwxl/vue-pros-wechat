@@ -18,4 +18,10 @@ export default {
 
 <style lang="scss">
   @import 'assets/styles/global.scss';
+  .vux-header {
+    background-color: #fff !important;
+  }
+  .vux-header-back, .vux-header-title {
+    color: #333 !important;
+  }
 </style>

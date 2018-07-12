@@ -10,20 +10,20 @@
     </div>
     <div class="member-content">
       <group gutter="0" class="group">
-        <cell title="培训记录" is-link>
+        <cell title="培训记录" is-link link="/minepeixun">
           <img class="cell-icon" slot="icon" src="@/assets/imgs/icon-peixun.png" alt="培训记录" />
         </cell>
-        <cell title="我的证书" is-link>
+        <cell title="我的证书" is-link link="/minezhengshu">
           <img class="cell-icon" slot="icon" src="@/assets/imgs/icon-zhengshu.png" alt="我的证书">
         </cell>
       </group>
       <group class="group">
-        <cell title="邀请红包" value="2.90元" is-link>
+        <cell title="邀请红包" value="2.90元" is-link link="/hongbao">
           <img class="cell-icon" slot="icon" src="@/assets/imgs/icon-hongbao.png" alt="邀请红包">
         </cell>
       </group>
       <group class="group">
-        <cell title="消息中心" is-link>
+        <cell title="消息中心" is-link link="/message">
           <img class="cell-icon" slot="icon" src="@/assets/imgs/icon-xiaoxi.png" alt="消息中心">
         </cell>
       </group>
@@ -80,6 +80,7 @@ export default {
     margin-top: 30px;
     color: #fff;
     font-size: 28px;
+    text-decoration: none;
   }
 }
 .member-message {
@@ -92,7 +93,7 @@ export default {
 .icon-message {
   display: inline-block;
   width: 24px;
-  margin: 5px;
+  margin: 10px;
   img {
     width: 100%;
   }
@@ -100,8 +101,9 @@ export default {
 .member-content {
   .group {
     .cell-icon {
-      margin-right: 5px;
-      width: 20px;
+      margin-right: 10px;
+      width: 32px;
+      vertical-align: middle;
     }
   }
 }
