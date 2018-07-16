@@ -1,23 +1,26 @@
 <!-- 培训记录 -->
 <template>
     <div>
-        <x-header>消息中心</x-header>
+        <x-header title="消息中心">
+            <a href="#" slot="right" class="a-filter">筛选<x-icon type="ios-arrow-down"></x-icon></a>
+        </x-header>
         <div class="member-content">
-            <group style="padding: 0 20px;">
-                <cell value="2018-7-10">
+            <group class="message-box">
+                <cell>
                     <i slot="icon" class="title-dot"></i>
                     <span slot="title">考试提醒</span>
+                    <span slot="value">2018-7-10</span>
                 </cell>
                 <cell-form-preview :list="list"></cell-form-preview>
             </group>
-            <group style="padding: 0 20px;">
+            <group class="message-box">
                 <cell value="2018-7-10">
                     <i slot="icon" class="title-dot"></i>
                     <span slot="title">考试结果通知</span>
                 </cell>
                 <cell-form-preview :list="list"></cell-form-preview>
             </group>
-            <group style="padding: 0 20px;">
+            <group class="message-box">
                 <cell value="2018-7-10">
                     <i slot="icon" class="title-dot"></i>
                     <span slot="title" style="color: green;">母婴护理</span>
@@ -36,6 +39,23 @@
         background: @theme-color;
         margin-right: 10px;
         vertical-align: middle;
+    }
+    .a-filter {
+        color: #666 !important;
+        text-decoration: none;
+        .vux-x-icon {
+            vertical-align: middle;
+            fill: #666;
+        }
+    }
+    .message-box {
+        padding: 0 20px;
+    }
+    .weui-cell__ft {
+        color: #aaa !important;
+    }
+    .weui-form-preview__value {
+        text-align: left !important;
     }
 </style>
 <script>

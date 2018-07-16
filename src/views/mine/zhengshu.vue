@@ -2,7 +2,7 @@
 <template>
     <div>
         <x-header title="我的证书">
-            <a slot="right">更多查询</a>
+            <a href="#" slot="right" style="color:;">更多查询</a>
         </x-header>
         <div class="member-content">
             <group>
