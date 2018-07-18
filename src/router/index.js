@@ -5,6 +5,8 @@ Vue.use(Router)
 const Login = r => require.ensure([], () => r(require('@/views/login/login')), 'Login')
 const Course = r => require.ensure([], () => r(require('@/views/course/course')), 'Course')
 const Job = r => require.ensure([], () => r(require('@/views/job/job')), 'Job')
+// 工作详情
+const JobDetail = r => require.ensure([], () => r(require('@/views/job/jobdetail')), 'JobDetail')
 const School = r => require.ensure([], () => r(require('@/views/school/school')), 'School')
 const Mine = r => require.ensure([], () => r(require('@/views/mine/mine')), 'Mine')
 const MineInfoDetail = r => require.ensure([], () => r(require('@/views/mine/detail')), 'MineInfoDetail')
@@ -27,12 +29,16 @@ export default new Router({
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta: {
+      navShow: false
+    }
   },
   {
     path: '/course',
     name: 'Course',
     meta: {
+      navShow: true,
       acturl: require('@/assets/imgs/icon-course-fill.png')
     },
     component: Course
@@ -41,14 +47,25 @@ export default new Router({
     path: '/job',
     name: 'Job',
     meta: {
-      acturl: require('@/assets/imgs/icon-job-fill.png')
+      navShow: true,
+      acturl: require('@/assets/imgs/icon-job-fill.png'),
+      isSubPage: false
     },
-    component: Job
+    component: Job,
+    children: [{
+      path: 'detail/:jobId',
+      name: 'JobDetail',
+      component: JobDetail,
+      meta: {
+        isSubPage: true
+      }
+    }]
   },
   {
     path: '/school',
     name: 'School',
     meta: {
+      navShow: true,
       acturl: require('@/assets/imgs/icon-school-fill.png')
     },
     component: School
@@ -57,6 +74,7 @@ export default new Router({
     path: '/mine',
     name: 'Mine',
     meta: {
+      navShow: true,
       acturl: require('@/assets/imgs/icon-mine-fill.png')
     },
     component: Mine
