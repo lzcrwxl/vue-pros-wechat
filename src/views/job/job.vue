@@ -56,90 +56,90 @@
 </template>
 
 <script>
-import { Grid, GridItem, Sticky } from "vux";
+import { Grid, GridItem, Sticky } from 'vux'
 
 export default {
-  data() {
+  data () {
     return {
       disabled:
-        typeof navigator !== "undefined" &&
+        typeof navigator !== 'undefined' &&
         /iphone/i.test(navigator.userAgent) &&
         /ucbrowser/i.test(navigator.userAgent),
       types: [
         {
-          label: "月嫂",
-          link: "",
-          url: require("@/assets/imgs/icon-yuesao.png")
+          label: '月嫂',
+          link: '',
+          url: require('@/assets/imgs/icon-yuesao.png')
         },
         {
-          label: "育儿嫂",
-          link: "",
-          url: require("@/assets/imgs/icon-yuersao.png")
+          label: '育儿嫂',
+          link: '',
+          url: require('@/assets/imgs/icon-yuersao.png')
         },
         {
-          label: "保姆",
-          link: "",
-          url: require("@/assets/imgs/icon-baomu.png")
+          label: '保姆',
+          link: '',
+          url: require('@/assets/imgs/icon-baomu.png')
         },
         {
-          label: "钟点工",
-          link: "",
-          url: require("@/assets/imgs/icon-zhongdiangong.png")
+          label: '钟点工',
+          link: '',
+          url: require('@/assets/imgs/icon-zhongdiangong.png')
         },
         {
-          label: "医院护工",
-          link: "",
-          url: require("@/assets/imgs/icon-hugong.png")
+          label: '医院护工',
+          link: '',
+          url: require('@/assets/imgs/icon-hugong.png')
         },
         {
-          label: "老人陪护",
-          link: "",
-          url: require("@/assets/imgs/icon-peihu.png")
+          label: '老人陪护',
+          link: '',
+          url: require('@/assets/imgs/icon-peihu.png')
         },
         {
-          label: "家庭管家",
-          link: "",
-          url: require("@/assets/imgs/icon-guanjia.png")
+          label: '家庭管家',
+          link: '',
+          url: require('@/assets/imgs/icon-guanjia.png')
         },
         {
-          label: "敬请期待",
-          link: "",
-          url: require("@/assets/imgs/icon-qidai.png")
+          label: '敬请期待',
+          link: '',
+          url: require('@/assets/imgs/icon-qidai.png')
         }
       ],
       joblist: [
         {
           id: 1,
-          name: "月嫂"
+          name: '月嫂'
         },
         {
           id: 2,
-          name: "育儿嫂"
+          name: '育儿嫂'
         },
         {
           id: 3,
-          name: "家庭管家"
+          name: '家庭管家'
         },
         {
           id: 4,
-          name: "育儿嫂"
+          name: '育儿嫂'
         },
         {
           id: 5,
-          name: "育儿嫂"
+          name: '育儿嫂'
         }
       ],
       age: {
         backgroundImage:
-          "url(" + require("../../assets/imgs/icon-age.png") + ")",
-        backgroundRepeat: "no-repeat"
+          'url(' + require('../../assets/imgs/icon-age.png') + ')',
+        backgroundRepeat: 'no-repeat'
       },
       location: {
         backgroundImage:
-          "url(" + require("../../assets/imgs/icon-location.png") + ")",
-        backgroundRepeat: "no-repeat"
+          'url(' + require('../../assets/imgs/icon-location.png') + ')',
+        backgroundRepeat: 'no-repeat'
       }
-    };
+    }
   },
 
   components: {
@@ -147,7 +147,7 @@ export default {
     GridItem,
     Sticky
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 .jobs-icon {
