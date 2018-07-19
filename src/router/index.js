@@ -57,7 +57,8 @@ export default new Router({
       name: 'JobDetail',
       component: JobDetail,
       meta: {
-        isSubPage: true
+        isSubPage: true,
+        title:'职位详情'
       }
     }]
   },
