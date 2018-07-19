@@ -1,10 +1,11 @@
 <!-- 公用头部 -->
 <template>
   <header>
-    <a href="#" class="back">
+    <a href="javascript:history.back(-1)" class="back">
       <img src="@/assets/imgs/icon-back.png" alt="">
     </a>
-    {{title}}
+    {{$route.meta.title}}
+    <slot name="job"></slot>
   </header>
 </template>
 
