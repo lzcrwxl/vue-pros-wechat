@@ -1,150 +1,77 @@
 <!-- 在线学堂 -->
 <template>
   <div id="course-tpl">
-    <div>
-      <sticky ref="sticky" :offset="0" :check-sticky-support="false" :disabled="disabled">
-        <tab :line-width="2" v-model="index">
-          <tab-item class="vux-center" :selected="demo2 === item" v-for="(item, index) in list2" @click="demo2 = item" :key="index">{{item}}</tab-item>
-        </tab>
-      </sticky>
+    <div v-if="!$route.meta.isSubPage">
+      <div>
+        <sticky ref="sticky" :offset="0" :check-sticky-support="false" :disabled="disabled">
+          <tab :line-width="2" v-model="index">
+            <tab-item class="vux-center" :selected="demo2 === item" v-for="(item, index) in list2" @click="demo2 = item" :key="index">{{item}}</tab-item>
+          </tab>
+        </sticky>
+      </div>
+      <div class="banner">
+        <img src="@/assets/imgs/banner.png" alt="">
+      </div>
+      <swiper v-model="index" :show-dots="false" height="700px">
+        <swiper-item v-for="(item, index) in list2" :key="index">
+          <ul class="course-list">
+            <router-link :to="{name:'CourseDetail',params:{cid:1}}" class="course-item">
+              <div class="ctn-lf">
+                <img src="@/assets/imgs/thumbnail.png" alt="">
+              </div>
+              <div class="ctn-rt">
+                <h4 class="ell">
+                  母婴护理员【上岗】
+                  <span class="price-txt">￥39/永久</span>
+                </h4>
+                <div class="category">
+                  适合工种
+                  <span>月嫂</span>
+                </div>
+                <div class="label-box ovh">
+                  <div class="line01 ell">
+                    <span class="tag fill">膳食</span>
+                    <span class="label-txt">健康膳食、起居护理、心里疏导</span>
+                  </div>
+                  <div class="line02 ell">
+                    <span class="tag plain">日常</span>
+                    <span class="label-txt">身体护理、健康喂养、日常物品清洁11111111111111111</span>
+                  </div>
+                </div>
+              </div>
+            </router-link>
+          </ul>
+        </swiper-item>
+      </swiper>
     </div>
-    <div class="banner">
-      <img src="@/assets/imgs/banner.png" alt="">
-    </div>
-    <swiper v-model="index" :show-dots="false" height="700px">
-      <swiper-item v-for="(item, index) in list2" :key="index">
-        <ul class="course-list">
-          <li class="course-item">
-            <div class="ctn-lf">
-              <img src="@/assets/imgs/thumbnail.png" alt="">
-            </div>
-            <div class="ctn-rt">
-              <h4 class="ell">
-                母婴护理员【上岗】
-                <span class="price-txt">￥39/永久</span>
-              </h4>
-              <div class="category">
-                适合工种
-                <span>月嫂</span>
-              </div>
-              <div class="label-box ovh">
-                <div class="line01 ell">
-                  <span class="tag fill">膳食</span>
-                  <span class="label-txt">健康膳食、起居护理、心里疏导</span>
-                </div>
-                <div class="line02 ell">
-                  <span class="tag plain">日常</span>
-                  <span class="label-txt">身体护理、健康喂养、日常物品清洁11111111111111111</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="course-item">
-            <div class="ctn-lf">
-              <img src="@/assets/imgs/thumbnail.png" alt="">
-            </div>
-            <div class="ctn-rt">
-              <h4 class="ell">
-                母婴护理员【上岗】
-                <span class="price-txt">￥39/永久</span>
-              </h4>
-              <div class="category">
-                适合工种
-                <span>月嫂</span>
-              </div>
-              <div class="label-box ovh">
-                <div class="line01 ell">
-                  <span class="tag fill">膳食</span>
-                  <span class="label-txt">健康膳食、起居护理、心里疏导</span>
-                </div>
-                <div class="line02 ell">
-                  <span class="tag plain">日常</span>
-                  <span class="label-txt">身体护理、健康喂养、日常物品清洁11111111111111111</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="course-item">
-            <div class="ctn-lf">
-              <img src="@/assets/imgs/thumbnail.png" alt="">
-            </div>
-            <div class="ctn-rt">
-              <h4 class="ell">
-                母婴护理员【上岗】
-                <span class="price-txt">￥39/永久</span>
-              </h4>
-              <div class="category">
-                适合工种
-                <span>月嫂</span>
-              </div>
-              <div class="label-box ovh">
-                <div class="line01 ell">
-                  <span class="tag fill">膳食</span>
-                  <span class="label-txt">健康膳食、起居护理、心里疏导</span>
-                </div>
-                <div class="line02 ell">
-                  <span class="tag plain">日常</span>
-                  <span class="label-txt">身体护理、健康喂养、日常物品清洁11111111111111111</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="course-item">
-            <div class="ctn-lf">
-              <img src="@/assets/imgs/thumbnail.png" alt="">
-            </div>
-            <div class="ctn-rt">
-              <h4 class="ell">
-                母婴护理员【上岗】
-                <span class="price-txt">￥39/永久</span>
-              </h4>
-              <div class="category">
-                适合工种
-                <span>月嫂</span>
-              </div>
-              <div class="label-box ovh">
-                <div class="line01 ell">
-                  <span class="tag fill">膳食</span>
-                  <span class="label-txt">健康膳食、起居护理、心里疏导</span>
-                </div>
-                <div class="line02 ell">
-                  <span class="tag plain">日常</span>
-                  <span class="label-txt">身体护理、健康喂养、日常物品清洁11111111111111111</span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </swiper-item>
-    </swiper>
-
+    <router-view v-else></router-view>
   </div>
 </template>
 
 <script>
-import { Tab, TabItem, Sticky, Swiper, SwiperItem } from 'vux'
+import { Tab, TabItem, Sticky, Swiper, SwiperItem } from "vux";
 // import 'swiper/dist/css/swiper.css'
 // import { swiper, swiperSlide } from 'vue-awesome-swiper'
-const list = () => ['已购课程', '推荐课程']
+const list = () => ["已购课程", "推荐课程"];
 
 export default {
-  data () {
+  data() {
     return {
       showSpace: false,
       disabled:
-        typeof navigator !== 'undefined' &&
+        typeof navigator !== "undefined" &&
         /iphone/i.test(navigator.userAgent) &&
         /ucbrowser/i.test(navigator.userAgent),
       index01: 0,
       list2: list(),
-      demo2: '美食',
-      list3: ['收到的消息', '发出的消息'],
-      demo3: '收到的消息',
-      list4: ['正在放映', '即将上映'],
-      demo4: '即将上映',
-      demoDisabled: 'A',
+      demo2: "美食",
+      list3: ["收到的消息", "发出的消息"],
+      demo3: "收到的消息",
+      list4: ["正在放映", "即将上映"],
+      demo4: "即将上映",
+      demoDisabled: "A",
       index: 0
-    }
+    };
   },
   components: {
     Tab,
@@ -154,21 +81,21 @@ export default {
     SwiperItem
   },
   methods: {
-    switchTabItem (index) {
-      console.log('on-before-index-change', index)
+    switchTabItem(index) {
+      console.log("on-before-index-change", index);
       this.$vux.loading.show({
-        text: 'loading'
-      })
+        text: "loading"
+      });
       setTimeout(() => {
-        this.$vux.loading.hide()
-        this.index01 = index
-      }, 1000)
+        this.$vux.loading.hide();
+        this.index01 = index;
+      }, 1000);
     },
-    onItemClick (index) {
-      console.log('on item click:', index)
+    onItemClick(index) {
+      console.log("on item click:", index);
     }
   }
-}
+};
 </script>
 <style lang='scss' scoped>
 .banner {

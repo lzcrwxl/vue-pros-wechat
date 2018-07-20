@@ -4,6 +4,7 @@ Vue.use(Router)
 
 const Login = r => require.ensure([], () => r(require('@/views/login/login')), 'Login')
 const Course = r => require.ensure([], () => r(require('@/views/course/course')), 'Course')
+const CourseDetail = r => require.ensure([], () => r(require('@/views/course/coursedetail')), 'CourseDetail')
 const Job = r => require.ensure([], () => r(require('@/views/job/job')), 'Job')
 // 工作详情
 const JobDetail = r => require.ensure([], () => r(require('@/views/job/jobdetail')), 'JobDetail')
@@ -41,7 +42,17 @@ export default new Router({
       navShow: true,
       acturl: require('@/assets/imgs/icon-course-fill.png')
     },
-    component: Course
+    component: Course,
+    children:[
+      {
+        path: 'detail/:cid',
+        name: 'CourseDetail',
+        component: CourseDetail,
+        meta: {
+          isSubPage: true
+        }
+      }
+    ]
   },
   {
     path: '/job',
@@ -58,7 +69,7 @@ export default new Router({
       component: JobDetail,
       meta: {
         isSubPage: true,
-        title:'职位详情'
+        title: '职位详情'
       }
     }]
   },

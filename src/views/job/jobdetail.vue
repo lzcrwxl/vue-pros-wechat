@@ -18,35 +18,76 @@
           <div class="line01">20分钟前</div>
           <div class="line02">发布时间</div>
         </li>
-         <li>
+        <li>
           <div class="line01">20分钟前</div>
           <div class="line02">发布时间</div>
         </li>
-         <li>
+        <li>
           <div class="line01">20分钟前</div>
           <div class="line02">发布时间</div>
         </li>
       </ul>
     </div>
     <div class="detail-ctn">
-
+      <group>
+        <cell title="需求详情"></cell>
+        <cell-form-preview :list="list"></cell-form-preview>
+      </group>
+      <group>
+        <cell title="职位要求"></cell>
+        <cell-box>
+          辅食、早教、年龄小于50岁，会普通话，好沟通，性格开朗，喜欢小孩，育儿经验3年以上
+        </cell-box>
+      </group>
+    </div>
+    <div class="contact-info">
+      <span>天天家政</span>
+      <a href="tel:12345678">王老师</a>
     </div>
   </div>
 </template>
 
 <script>
-import { Card, Divider } from "vux";
+import {
+  Card,
+  Group,
+  Cell,
+  CellBox,
+  CellFormPreview,
+  Flexbox,
+  FlexboxItem
+} from "vux";
 import HeadNav from "@/components/Header.vue";
 
 export default {
   data() {
     return {
-      jobStyle: {}
+      jobStyle: {},
+      list: [
+        {
+          label: "服务区域",
+          value: "3.29"
+        },
+        {
+          label: "服务时间",
+          value: "1.04"
+        },
+        {
+          label: "技能要求",
+          value: "辅食制作、智力早教、小儿推拿、宝宝带睡"
+        }
+      ]
     };
   },
   components: {
     HeadNav,
-    Card
+    Card,
+    Group,
+    Cell,
+    CellBox,
+    CellFormPreview,
+    Flexbox,
+    FlexboxItem
   }
 };
 </script>
@@ -78,15 +119,15 @@ export default {
     align-items: center;
     height: 110px;
     li {
-      &:not(:last-child){
+      &:not(:last-child) {
         border-right: 1px solid #bcffdf;
       }
       flex: 1;
       text-align: center;
-      .line01{
+      .line01 {
         @include font-dpr(26px);
       }
-      .line02{
+      .line02 {
         margin-top: 20px;
         @include font-dpr(24px);
       }
@@ -103,5 +144,9 @@ export default {
     font-weight: bold;
     @include font-dpr(34px);
   }
+}
+.contact-info{
+  background: #fff;
+  position: fixed;
 }
 </style>
