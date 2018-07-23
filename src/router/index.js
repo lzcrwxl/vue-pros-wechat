@@ -43,7 +43,7 @@ export default new Router({
       acturl: require('@/assets/imgs/icon-course-fill.png')
     },
     component: Course,
-    children:[
+    children: [
       {
         path: 'detail/:cid',
         name: 'CourseDetail',
