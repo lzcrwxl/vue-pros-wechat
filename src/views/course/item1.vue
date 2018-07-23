@@ -3,18 +3,18 @@
     <div class="exer-pannel">
       <h6>
         小练习
-        <a href="#">
+        <router-link :to="{name:'Tips'}">
           进入
-          <!-- <x-icon type="ios-arrow-right" class="icon-dark"></x-icon> -->
-        </a>
+        </router-link>
       </h6>
       <p>随时开启，灵活练习，答疑解惑</p>
     </div>
     <div class="exer-pannel">
       <h6>
         模拟考试
-        <a href="#">
-          <span>90'</span> 进入</a>
+        <router-link :to="{name:'Tips'}">
+          <span>90'</span> 进入
+        </router-link>
       </h6>
       <p class="p-line01">判断题：0.5分/题，60题</p>
       <p>单选题：1.0分/题，70题</p>
@@ -42,7 +42,6 @@ export default {
       a {
         @include font-dpr(24px);
         color: #c8c8cc;
-       
       }
       justify-content: space-between;
       align-items: center;

@@ -15,106 +15,119 @@ const MinePeixun = r => require.ensure([], () => r(require('@/views/mine/peixun'
 const MineZhengshu = r => require.ensure([], () => r(require('@/views/mine/zhengshu')), 'MineZhengshu')
 const message = r => require.ensure([], () => r(require('@/views/mine/message')), 'message')
 const hongbao = r => require.ensure([], () => r(require('@/views/mine/hongbao')), 'hongbao')
+const tips = r => require.ensure([], () => r(require('@/views/course/exam/tips')), 'tips')
+const exam = r => require.ensure([], () => r(require('@/views/course/exam/exam')), 'exam')
 
 export default new Router({
   linkActiveClass: 'active',
   linkExactActiveClass: 'active',
   routes: [{
-    path: '/',
-    redirect: '/course'
-  },
-  {
-    path: '*',
-    redirect: '/course'
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login,
-    meta: {
-      navShow: false
-    }
-  },
-  {
-    path: '/course',
-    name: 'Course',
-    meta: {
-      navShow: true,
-      acturl: require('@/assets/imgs/icon-course-fill.png')
+      path: '/',
+      redirect: '/course'
     },
-    component: Course,
-    children: [
-      {
+    {
+      path: '*',
+      redirect: '/course'
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+      meta: {
+        navShow: false
+      }
+    },
+    {
+      path: '/course',
+      name: 'Course',
+      meta: {
+        navShow: true,
+        acturl: require('@/assets/imgs/icon-course-fill.png')
+      },
+      component: Course,
+      children: [{
         path: 'detail/:cid',
         name: 'CourseDetail',
         component: CourseDetail,
         meta: {
           isSubPage: true
         }
-      }
-    ]
-  },
-  {
-    path: '/job',
-    name: 'Job',
-    meta: {
-      navShow: true,
-      acturl: require('@/assets/imgs/icon-job-fill.png'),
-      isSubPage: false
+      }]
     },
-    component: Job,
-    children: [{
-      path: 'detail/:jobId',
-      name: 'JobDetail',
-      component: JobDetail,
+    {
+      path: '/job',
+      name: 'Job',
       meta: {
-        isSubPage: true,
-        title: '职位详情'
+        navShow: true,
+        acturl: require('@/assets/imgs/icon-job-fill.png'),
+        isSubPage: false
+      },
+      component: Job,
+      children: [{
+        path: 'detail/:jobId',
+        name: 'JobDetail',
+        component: JobDetail,
+        meta: {
+          isSubPage: true,
+          title: '职位详情'
+        }
+      }]
+    },
+    {
+      path: '/school',
+      name: 'School',
+      meta: {
+        navShow: true,
+        acturl: require('@/assets/imgs/icon-school-fill.png')
+      },
+      component: School
+    },
+    {
+      path: '/mine',
+      name: 'Mine',
+      meta: {
+        navShow: true,
+        acturl: require('@/assets/imgs/icon-mine-fill.png')
+      },
+      component: Mine
+    },
+    {
+      path: '/mineinfodetail',
+      name: 'MineInfoDetail',
+      component: MineInfoDetail
+    },
+    {
+      path: '/minepeixun',
+      name: 'MinePeixun',
+      component: MinePeixun
+    },
+    {
+      path: '/minezhengshu',
+      name: 'MineZhengshu',
+      component: MineZhengshu
+    },
+    {
+      path: '/message',
+      name: 'message',
+      component: message
+    },
+    {
+      path: '/hongbao',
+      name: 'hongbao',
+      component: hongbao
+    },
+    {
+      path: '/tips',
+      name: 'Tips',
+      component: tips,
+      meta: {
+        title: '母婴护理员'
       }
-    }]
-  },
-  {
-    path: '/school',
-    name: 'School',
-    meta: {
-      navShow: true,
-      acturl: require('@/assets/imgs/icon-school-fill.png')
     },
-    component: School
-  },
-  {
-    path: '/mine',
-    name: 'Mine',
-    meta: {
-      navShow: true,
-      acturl: require('@/assets/imgs/icon-mine-fill.png')
-    },
-    component: Mine
-  },
-  {
-    path: '/mineinfodetail',
-    name: 'MineInfoDetail',
-    component: MineInfoDetail
-  },
-  {
-    path: '/minepeixun',
-    name: 'MinePeixun',
-    component: MinePeixun
-  },
-  {
-    path: '/minezhengshu',
-    name: 'MineZhengshu',
-    component: MineZhengshu
-  },
-  {
-    path: '/message',
-    name: 'message',
-    component: message
-  },
-  {
-    path: '/hongbao',
-    name: 'hongbao',
-    component: hongbao
-  }
+    {
+      path: '/exam',
+      name: 'exam',
+      component: exam,
+    }
   ]
 })
