@@ -6,17 +6,17 @@
 </template>
 
 <script>
-import { XHeader } from "vux";
+import { XHeader } from 'vux'
 
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
   methods: {},
   components: {
     XHeader
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 </style>

@@ -9,12 +9,13 @@ const Job = r => require.ensure([], () => r(require('@/views/job/job')), 'Job')
 // 工作详情
 const JobDetail = r => require.ensure([], () => r(require('@/views/job/jobdetail')), 'JobDetail')
 const School = r => require.ensure([], () => r(require('@/views/school/school')), 'School')
+const SchoolDetail = r => require.ensure([], () => r(require('@/views/school/schooldetail')), 'SchoolDetail')
 const Mine = r => require.ensure([], () => r(require('@/views/mine/mine')), 'Mine')
-const MineInfoDetail = r => require.ensure([], () => r(require('@/views/mine/detail')), 'MineInfoDetail')
-const MinePeixun = r => require.ensure([], () => r(require('@/views/mine/peixun')), 'MinePeixun')
-const MineZhengshu = r => require.ensure([], () => r(require('@/views/mine/zhengshu')), 'MineZhengshu')
-const message = r => require.ensure([], () => r(require('@/views/mine/message')), 'message')
-const hongbao = r => require.ensure([], () => r(require('@/views/mine/hongbao')), 'hongbao')
+const InfoDetail = r => require.ensure([], () => r(require('@/views/mine/detail')), 'InfoDetail')
+const PeiXun = r => require.ensure([], () => r(require('@/views/mine/peixun')), 'PeiXun')
+const ZhengShu = r => require.ensure([], () => r(require('@/views/mine/zhengshu')), 'ZhengShu')
+const Message = r => require.ensure([], () => r(require('@/views/mine/message')), 'Message')
+const HongBao = r => require.ensure([], () => r(require('@/views/mine/hongbao')), 'HongBao')
 
 export default new Router({
   linkActiveClass: 'active',
@@ -43,7 +44,7 @@ export default new Router({
       acturl: require('@/assets/imgs/icon-course-fill.png')
     },
     component: Course,
-    children:[
+    children: [
       {
         path: 'detail/:cid',
         name: 'CourseDetail',
@@ -80,7 +81,15 @@ export default new Router({
       navShow: true,
       acturl: require('@/assets/imgs/icon-school-fill.png')
     },
-    component: School
+    component: School,
+    children: [{
+      path: 'school/:schoolId',
+      name: 'SchoolDetail',
+      component: SchoolDetail,
+      meta: {
+        isSubPage: true
+      }
+    }]
   },
   {
     path: '/mine',
@@ -89,32 +98,46 @@ export default new Router({
       navShow: true,
       acturl: require('@/assets/imgs/icon-mine-fill.png')
     },
-    component: Mine
-  },
-  {
-    path: '/mineinfodetail',
-    name: 'MineInfoDetail',
-    component: MineInfoDetail
-  },
-  {
-    path: '/minepeixun',
-    name: 'MinePeixun',
-    component: MinePeixun
-  },
-  {
-    path: '/minezhengshu',
-    name: 'MineZhengshu',
-    component: MineZhengshu
-  },
-  {
-    path: '/message',
-    name: 'message',
-    component: message
-  },
-  {
-    path: '/hongbao',
-    name: 'hongbao',
-    component: hongbao
-  }
-  ]
+    component: Mine,
+    children: [{
+      path: 'mine/infodetail',
+      name: 'InfoDetail',
+      component: InfoDetail,
+      meta: {
+        isSubPage: true
+      }
+    },
+    {
+      path: 'mine/peixun',
+      name: 'PeiXun',
+      component: PeiXun,
+      meta: {
+        isSubPage: true
+      }
+    },
+    {
+      path: 'mine/zhengshu',
+      name: 'ZhengShu',
+      component: ZhengShu,
+      meta: {
+        isSubPage: true
+      }
+    },
+    {
+      path: 'mine/message',
+      name: 'Message',
+      component: Message,
+      meta: {
+        isSubPage: true
+      }
+    },
+    {
+      path: 'mine/hongbao',
+      name: 'HongBao',
+      component: HongBao,
+      meta: {
+        isSubPage: true
+      }
+    }]
+  }]
 })

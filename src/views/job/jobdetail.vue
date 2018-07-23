@@ -56,28 +56,28 @@ import {
   CellFormPreview,
   Flexbox,
   FlexboxItem
-} from "vux";
-import HeadNav from "@/components/Header.vue";
+} from 'vux'
+import HeadNav from '@/components/Header.vue'
 
 export default {
-  data() {
+  data () {
     return {
       jobStyle: {},
       list: [
         {
-          label: "服务区域",
-          value: "3.29"
+          label: '服务区域',
+          value: '3.29'
         },
         {
-          label: "服务时间",
-          value: "1.04"
+          label: '服务时间',
+          value: '1.04'
         },
         {
-          label: "技能要求",
-          value: "辅食制作、智力早教、小儿推拿、宝宝带睡"
+          label: '技能要求',
+          value: '辅食制作、智力早教、小儿推拿、宝宝带睡'
         }
       ]
-    };
+    }
   },
   components: {
     HeadNav,
@@ -89,7 +89,7 @@ export default {
     Flexbox,
     FlexboxItem
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 .share-job {
