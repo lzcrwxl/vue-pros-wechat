@@ -1,8 +1,8 @@
 <template>
   <div class="video-ctn">
-    <div class="video-title">
-      第一考区：孕产妇护理
-    </div>
+        <div class="video-title">
+          第一考区：孕产妇护理
+        </div>
     <ul class="video-list">
       <li>
         1.1.1 孕妇体操指导
@@ -79,10 +79,7 @@ export default {
         backgroundImage:
           "url(" + require("../../assets/imgs/icon-play.png") + ")"
       },
-      disabled:
-        typeof navigator !== "undefined" &&
-        /iphone/i.test(navigator.userAgent) &&
-        /ucbrowser/i.test(navigator.userAgent)
+      disabled: typeof navigator !== 'undefined' && /iphone/i.test(navigator.userAgent) && /ucbrowser/i.test(navigator.userAgent)
     };
   },
   components: {

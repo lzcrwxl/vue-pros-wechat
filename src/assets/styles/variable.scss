@@ -5,7 +5,7 @@ $theme-color:#31c27c;
   width: $w;
   height: $h;
   line-height: $h;
-  font-size: $fz;
+  @include font-dpr($fz);
   text-align: center;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
