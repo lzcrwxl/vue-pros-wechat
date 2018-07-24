@@ -16,81 +16,73 @@ const PeiXun = r => require.ensure([], () => r(require('@/views/mine/peixun')), 
 const ZhengShu = r => require.ensure([], () => r(require('@/views/mine/zhengshu')), 'ZhengShu')
 const Message = r => require.ensure([], () => r(require('@/views/mine/message')), 'Message')
 const HongBao = r => require.ensure([], () => r(require('@/views/mine/hongbao')), 'HongBao')
+const tips = r => require.ensure([], () => r(require('@/views/course/exam/tips')), 'tips')
+const exam = r => require.ensure([], () => r(require('@/views/course/exam/exam')), 'exam')
 
 export default new Router({
   linkActiveClass: 'active',
   linkExactActiveClass: 'active',
   routes: [{
-    path: '/',
-    redirect: '/course'
-  },
-  {
-    path: '*',
-    redirect: '/course'
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login,
-    meta: {
-      navShow: false
-    }
-  },
-  {
-    path: '/course',
-    name: 'Course',
-    meta: {
-      navShow: true,
-      acturl: require('@/assets/imgs/icon-course-fill.png')
+      path: '/',
+      redirect: '/course'
     },
-    component: Course,
-    children: [
-      {
+    {
+      path: '*',
+      redirect: '/course'
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+      meta: {
+        navShow: false
+      }
+    },
+    {
+      path: '/course',
+      name: 'Course',
+      meta: {
+        navShow: true,
+        acturl: require('@/assets/imgs/icon-course-fill.png')
+      },
+      component: Course,
+      children: [{
         path: 'detail/:cid',
         name: 'CourseDetail',
         component: CourseDetail,
         meta: {
           isSubPage: true
         }
-      }
-    ]
-  },
-  {
-    path: '/job',
-    name: 'Job',
-    meta: {
-      navShow: true,
-      acturl: require('@/assets/imgs/icon-job-fill.png'),
-      isSubPage: false
+      }]
     },
-    component: Job,
-    children: [{
-      path: 'detail/:jobId',
-      name: 'JobDetail',
-      component: JobDetail,
+    {
+      path: '/job',
+      name: 'Job',
       meta: {
-        isSubPage: true,
-        title: '职位详情'
-      }
-    }]
-  },
-  {
-    path: '/school',
-    name: 'School',
-    meta: {
-      navShow: true,
-      acturl: require('@/assets/imgs/icon-school-fill.png')
+        navShow: true,
+        acturl: require('@/assets/imgs/icon-job-fill.png'),
+        isSubPage: false
+      },
+      component: Job,
+      children: [{
+        path: 'detail/:jobId',
+        name: 'JobDetail',
+        component: JobDetail,
+        meta: {
+          isSubPage: true,
+          title: '职位详情'
+        }
+      }]
     },
-    component: School,
-    children: [{
-      path: 'school/:schoolId',
-      name: 'SchoolDetail',
-      component: SchoolDetail,
+    {
+      path: '/school',
+      name: 'School',
       meta: {
-        isSubPage: true
-      }
-    }]
-  },
+        navShow: true,
+        acturl: require('@/assets/imgs/icon-school-fill.png')
+      },
+      component: School
+    },
   {
     path: '/mine',
     name: 'Mine',
@@ -99,7 +91,8 @@ export default new Router({
       acturl: require('@/assets/imgs/icon-mine-fill.png')
     },
     component: Mine
-  },{
+  },
+  {
     path: '/infodetail',
     name: 'infodetail',
     component: InfoDetail
@@ -123,5 +116,19 @@ export default new Router({
     path: '/hongbao',
     name: 'hongbao',
     component: HongBao
-  }]
+  },
+  {
+    path: '/tips',
+    name: 'Tips',
+    component: tips,
+    meta: {
+      title: '母婴护理员'
+    }
+  },
+  {
+    path: '/exam',
+    name: 'exam',
+    component: exam,
+  }
+]
 })

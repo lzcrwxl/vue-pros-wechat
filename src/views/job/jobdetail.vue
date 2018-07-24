@@ -1,13 +1,13 @@
 <!-- 工作详情 -->
 <template>
   <div id="job-detail">
-    <head-nav>
+    <nav-header>
       <template slot="job">
         <a class="share-job" :style="jobStyle">
           <img src="@/assets/imgs/icon-share.png" alt=""><br> 分享职位
         </a>
       </template>
-    </head-nav>
+    </nav-header>
     <div class="detail-head">
       <div class="head-title">
         正在寻找
@@ -57,7 +57,7 @@ import {
   Flexbox,
   FlexboxItem
 } from 'vux'
-import HeadNav from '@/components/Header.vue'
+import NavHeader from '@/components/Header.vue'
 
 export default {
   data () {
@@ -80,7 +80,7 @@ export default {
     }
   },
   components: {
-    HeadNav,
+    NavHeader,
     Card,
     Group,
     Cell,

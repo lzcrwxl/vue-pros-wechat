@@ -15,7 +15,7 @@
       <swiper v-model="index" :show-dots="false" height="700px">
         <swiper-item v-for="(item, index) in list2" :key="index">
           <ul class="course-list">
-            <router-link :to="{name:'CourseDetail',params:{cid:1}}" class="course-item">
+            <router-link :to="{name:'CourseDetail',params:{cid:1}}" class="course-item" tag="li">
               <div class="ctn-lf">
                 <img src="@/assets/imgs/thumbnail.png" alt="">
               </div>
