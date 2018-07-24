@@ -24,22 +24,22 @@
 </template>
 
 <script>
-import item0 from "./item0.vue";
-import item1 from "./item1.vue";
-import item2 from "./item2.vue";
-import { XHeader, Tab, TabItem } from "vux";
+import item0 from './item0.vue'
+import item1 from './item1.vue'
+import item2 from './item2.vue'
+import { XHeader, Tab, TabItem } from 'vux'
 
 export default {
-  data() {
+  data () {
     return {
-      tabs: ["操作视频", "答题训练", "学习记录"],
+      tabs: ['操作视频', '答题训练', '学习记录'],
       selected: 0,
-      currentView: "item0"
-    };
+      currentView: 'item0'
+    }
   },
   methods: {
-    onItemClick(index) {
-      this.currentView = "item" + index;
+    onItemClick (index) {
+      this.currentView = 'item' + index
     }
   },
   components: {
@@ -50,7 +50,7 @@ export default {
     item1,
     item2
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 .hongbao-box {
@@ -86,19 +86,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  .btn-plain {
-    @include btn-base(320px, 84px, 30px);
-    border-radius: 6px;
-    border: solid 1px #31c27c;
-    background: #fff;
-    color: #31c27c;
-  }
-  .btn-fill{
-    margin-left: 30px;
-     @include btn-base(320px, 84px, 30px);
-    border-radius: 6px;
-    background-color: #31c27c;
-    color: #fff;
-  }
+
 }
 </style>

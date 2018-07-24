@@ -71,21 +71,21 @@
   </div>
 </template>
 <script>
-import { Sticky } from "vux";
+import { Sticky } from 'vux'
 export default {
-  data() {
+  data () {
     return {
       play: {
         backgroundImage:
-          "url(" + require("../../assets/imgs/icon-play.png") + ")"
+          'url(' + require('../../assets/imgs/icon-play.png') + ')'
       },
       disabled: typeof navigator !== 'undefined' && /iphone/i.test(navigator.userAgent) && /ucbrowser/i.test(navigator.userAgent)
-    };
+    }
   },
   components: {
     Sticky
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 .video-ctn {
@@ -124,4 +124,3 @@ export default {
   }
 }
 </style>
-

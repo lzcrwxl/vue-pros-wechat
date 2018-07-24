@@ -28,16 +28,16 @@
   </div>
 </template>
 <script>
-import { XTable } from "vux";
+import { XTable } from 'vux'
 
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
   components: {
     XTable
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 .time{
@@ -45,4 +45,3 @@ export default {
   vertical-align: baseline;
 }
 </style>
-

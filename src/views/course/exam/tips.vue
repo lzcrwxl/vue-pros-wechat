@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import NavHeader from "@/components/Header.vue";
+import NavHeader from '@/components/Header.vue'
 
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
 
   components: {
@@ -31,7 +31,7 @@ export default {
   mounted: {},
 
   methods: {}
-};
+}
 </script>
 <style lang='scss' scoped>
 .tips-ctn {
@@ -56,16 +56,8 @@ export default {
     color: #969699;
     font-size: 30px;
   }
-
-  .fill{
-    background-color: #31c27c;
-    color: #fff;
-  }
   .plain{
     margin-top: 30px;
-    background: #fff;
-    color: #969699;
-    border: solid 2px #c8c8cc;
   }
 }
 </style>
