@@ -13,7 +13,7 @@
       </div>
     </div>
     <ul class="school-list">
-      <li class="school-item">
+      <router-link tag="li" :to="{name: 'SchoolDetail', params: {schoolId: item.id}}" v-for="item in schoollist" :key="item.id" class="school-item">
         <div class="school-item-bd">
           <div class="school-item-l"><img src="@/assets/imgs/school_logo.png" /></div>
           <div class="school-item-r">
@@ -29,41 +29,7 @@
           <div class="school-main-course">母婴护理、育婴师、家政服务员……</div>
           <a href="#" class="school-more-course">更多课程</a>
         </div>
-      </li>
-      <li class="school-item">
-        <div class="school-item-bd">
-          <div class="school-item-l"><img src="@/assets/imgs/school_logo.png" /></div>
-          <div class="school-item-r">
-            <div class="school-title">家策商学院总部</div>
-            <div class="school-info">
-              <div class="school-teacher"><i class="school-icon"><img src="@/assets/imgs/icon-teacher.png" /></i>严老师</div>
-              <div class="school-tel"><i class="school-icon"><img src="@/assets/imgs/icon-tel.png" /></i>021-62568760</div>
-              <div class="school-address"><i class="school-icon"><img src="@/assets/imgs/icon-address.png" /></i>上海市徐汇区南丹东路1200号</div>
-            </div>
-          </div>
-        </div>
-        <div class="school-item-ft">
-          <div class="school-main-course">母婴护理、育婴师、家政服务员……</div>
-          <a href="#" class="school-more-course">更多课程</a>
-        </div>
-      </li>
-      <li class="school-item">
-        <div class="school-item-bd">
-          <div class="school-item-l"><img src="@/assets/imgs/school_logo.png" /></div>
-          <div class="school-item-r">
-            <div class="school-title">家策商学院总部</div>
-            <div class="school-info">
-              <div class="school-teacher"><i class="school-icon"><img src="@/assets/imgs/icon-teacher.png" /></i>严老师</div>
-              <div class="school-tel"><i class="school-icon"><img src="@/assets/imgs/icon-tel.png" /></i>021-62568760</div>
-              <div class="school-address"><i class="school-icon"><img src="@/assets/imgs/icon-address.png" /></i>上海市徐汇区南丹东路1200号</div>
-            </div>
-          </div>
-        </div>
-        <div class="school-item-ft">
-          <div class="school-main-course">母婴护理、育婴师、家政服务员……</div>
-          <a href="#" class="school-more-course">更多课程</a>
-        </div>
-      </li>
+      </router-link>
     </ul>
 
   </div>
@@ -77,7 +43,21 @@ import { Grid, GridItem } from 'vux'
 export default {
   data () {
     return {
-      showSpace: false
+      showSpace: false,
+      schoollist: [
+        {
+          id: 1,
+          name: '长江商学院'
+        },
+        {
+          id: 2,
+          name: '杭州艺术学院'
+        },
+        {
+          id: 3,
+          name: '江南大学'
+        }
+      ]
     }
   },
   components: {

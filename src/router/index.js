@@ -98,46 +98,30 @@ export default new Router({
       navShow: true,
       acturl: require('@/assets/imgs/icon-mine-fill.png')
     },
-    component: Mine,
-    children: [{
-      path: 'mine/infodetail',
-      name: 'InfoDetail',
-      component: InfoDetail,
-      meta: {
-        isSubPage: true
-      }
-    },
-    {
-      path: 'mine/peixun',
-      name: 'PeiXun',
-      component: PeiXun,
-      meta: {
-        isSubPage: true
-      }
-    },
-    {
-      path: 'mine/zhengshu',
-      name: 'ZhengShu',
-      component: ZhengShu,
-      meta: {
-        isSubPage: true
-      }
-    },
-    {
-      path: 'mine/message',
-      name: 'Message',
-      component: Message,
-      meta: {
-        isSubPage: true
-      }
-    },
-    {
-      path: 'mine/hongbao',
-      name: 'HongBao',
-      component: HongBao,
-      meta: {
-        isSubPage: true
-      }
-    }]
+    component: Mine
+  },{
+    path: '/infodetail',
+    name: 'infodetail',
+    component: InfoDetail
+  },
+  {
+    path: '/peixun',
+    name: 'peixun',
+    component: PeiXun
+  },
+  {
+    path: '/zhengshu',
+    name: 'zhengshu',
+    component: ZhengShu
+  },
+  {
+    path: '/message',
+    name: 'message',
+    component: Message
+  },
+  {
+    path: '/hongbao',
+    name: 'hongbao',
+    component: HongBao
   }]
 })
