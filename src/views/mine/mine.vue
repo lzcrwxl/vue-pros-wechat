@@ -4,26 +4,28 @@
     <div class="member-top">
       <div class="member-top-middle">
         <img src="@/assets/imgs/user-avatar.png" style="margin-bottom:10px;" /><br/>
-        <a href="javascript:void(0);" @click="goDetail">查看个人详情</a>
+        <router-link :to="{name: 'InfoDetail'}">
+          查看个人详情
+        </router-link>
       </div>
       <span class="member-message"><i class="icon icon-message"><img src="@/assets/imgs/icon-message.png" /></i>提醒</span>
     </div>
     <div class="member-content">
       <group gutter="0" class="group">
-        <cell title="培训记录" is-link link="/minepeixun">
+        <cell title="培训记录" is-link link="peixun">
           <img class="cell-icon" slot="icon" src="@/assets/imgs/icon-peixun.png" alt="培训记录" />
         </cell>
-        <cell title="我的证书" is-link link="/minezhengshu">
+        <cell title="我的证书" is-link link="zhengshu">
           <img class="cell-icon" slot="icon" src="@/assets/imgs/icon-zhengshu.png" alt="我的证书">
         </cell>
       </group>
       <group class="group">
-        <cell title="邀请红包" value="2.90元" is-link link="/hongbao">
+        <cell title="邀请红包" value="2.90元" is-link link="hongbao">
           <img class="cell-icon" slot="icon" src="@/assets/imgs/icon-hongbao.png" alt="邀请红包">
         </cell>
       </group>
       <group class="group">
-        <cell title="消息中心" is-link link="/message">
+        <cell title="消息中心" is-link link="message">
           <img class="cell-icon" slot="icon" src="@/assets/imgs/icon-xiaoxi.png" alt="消息中心">
         </cell>
       </group>
